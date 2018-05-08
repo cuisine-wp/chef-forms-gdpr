@@ -1,0 +1,25 @@
+{
+  "name": "cuisine/chef-forms-gdpr",
+  "description": "Chef Forms GDPR adds GDPR compliance to forms",
+  "keywords": ["wordpress", "plugin", "canvas", "starter"],
+  "homepage": "https://get-cuisine.cooking/forms",
+  "license": "GPLv3",
+  "authors": [
+    {
+      "name": "Luc Princen",
+      "email": "hi@lucp.nl",
+      "homepage": "https://www.lucp.nl"
+    },
+    {
+      "name": "Remy Bakker",
+      "email": "remy@sprangers.com",
+      "homepage": "https://www.sprangers.com"
+    },
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=5.3.2",
+    "chefduweb/cuisine": "dev-master",
+    "chefduweb/chef-forms": "dev-master"
+  }
+}

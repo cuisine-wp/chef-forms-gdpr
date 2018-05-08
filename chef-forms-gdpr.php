@@ -69,7 +69,7 @@ if (!class_exists('PluginIgniter')) {
         private function load(){
 
             //require the language domain:
-            $path = __DIR__ . DS . '/Languages/';
+            $path = dirname( plugin_basename( __FILE__ ) ).'/Languages/';
             load_plugin_textdomain( 'chefformsgdpr', false, $path );
 
             //require the autoloader:

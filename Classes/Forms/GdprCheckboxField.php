@@ -149,6 +149,7 @@ class GdprCheckboxField extends DefaultField{
         $strings = [
             'privacy statement',
             'privacy pagina',
+            'privacy policy',
             'privacy overeenkomst',
             'rivacyovereenkomst',
         ];

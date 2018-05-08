@@ -4,11 +4,11 @@ namespace ChefFormsGdpr\Facades;
 
 use ChefFormsGdpr\Contracts\Facade;
 
-class Example extends Facade
+class Processor extends Facade
 {
 
     /**
-     * Return the igniter service key responsible for the Example class.
+     * Return the igniter service key responsible for the Processor class.
      * The key must be the same as the one used in the assigned
      * igniter service.
      *
@@ -16,7 +16,7 @@ class Example extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'example';
+        return 'processor';
     }
 
 }

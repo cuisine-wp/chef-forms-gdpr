@@ -32,7 +32,7 @@
          */
         public static function all(){
             return [
-                'example' => 'ChefFormsGdpr\Example\Example'
+                'processor' => 'ChefFormsGdpr\Forms\Processor'
             ];
         }
 

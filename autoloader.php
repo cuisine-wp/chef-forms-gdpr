@@ -11,16 +11,16 @@ class Autoloader
      */
     public function load()
     {
-        //for the front:
+        //register the custom field type:
+        Forms\Register::getInstance();
+
+        //register events and assets:
         Front\Events::getInstance();
         Front\Assets::getInstance();
 
         //and the admin:
         if (is_admin()) {
-            Admin\Ajax::getInstance();
-            Admin\Assets::getInstance();
-            Admin\Events::getInstance();
-            Admin\Metaboxes::getInstance();
+            Admin\SettingsPage::getInstance();
         }
     }
 
@@ -28,7 +28,7 @@ class Autoloader
     /**
      * Register the autoloader
      *
-     * @return Crouton\Autoloader
+     * @return ChefFormsGdpr\Autoloader
      */
     public function register()
     {

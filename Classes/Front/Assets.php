@@ -1,38 +1,28 @@
 <?php
 
-	namespace ChefFormsGdpr\Front;
+    namespace ChefFormsGdpr\Front;
 
-	use Cuisine\Utilities\Url;
-	use Cuisine\Wrappers\Script;
-	use Cuisine\Wrappers\Sass;
-	use ChefFormsGdpr\Contracts\AssetLoader;
+    use ChefFormsGdpr\Contracts\AssetLoader;
 
-	class Assets extends AssetLoader{
+    class Assets extends AssetLoader{
 
-		/**
-		 * Enqueue scripts & Styles
-		 * 
-		 * @return void
-		 */
-		public function load(){
+        /**
+         * Load various assets
+         *
+         * @return void
+         */
+        public function load()
+        {
+            add_action( 'wp_head', function(){
+                echo '<style>';
+                    echo '.form-fields .field-row .field-wrapper.gdpr-checkbox, .form-fields .field-wrapper.gdpr-checkbox{';
+                        echo 'display: flex;';
+                    echo '}';
+                    echo '.form-fields .field-row .field-wrapper.gdpr-checkbox input, .form-fields .field-wrapper.gdpr-checkbox input{';
+                        echo 'width: 30px !important; margin-right: 5px;';
+                    echo '}';
+                echo '</style>';
+            });
+        }
 
-			/**
-			 * Below are just some examples
-			 */
-			add_action( 'init', function(){
-
-				//javascript files loaded in the frond-end:
-				//$url = Url::plugin( 'ChefFormsGdpr', true ).'Assets/js/';
-
-				// id - url (without .js) - autoload
-				//Script::register( 'ChefFormsGdpr-script', $url.'Frontend', false );
-
-				//sass files loaded in the front-end:
-				//$url = 'ChefFormsGdpr/Assets/sass/';
-				
-				// id - url (without .scss ) - force-overwrite
-				//Sass::register( 'template', $url.'_template', false );
-			
-			});
-		}
-	}
+    }

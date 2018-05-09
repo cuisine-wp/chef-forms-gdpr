@@ -15,7 +15,7 @@
 		 */
 		public function listen(){
 
-			$this->exclusions();
+			$this->handleExlusions();
 
 
 			//when a form gets submitted:
@@ -39,7 +39,7 @@
 		 *
 		 * @return void
 		 */
-		public function exlusions()
+		public function handleExlusions()
 		{
 		
 			//don't process default GDPR stuff in some cases:

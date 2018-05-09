@@ -15,6 +15,8 @@
 		 */
 		public function listen(){
 
+			$this->exclusions();
+
 
 			//when a form gets submitted:
 			add_action( 'form_submitted', function( $form, $entry ){
@@ -30,6 +32,40 @@
 				Processor::autoRemove();
 			});
 
+		}
+
+		/*
+		 * Register Exclusions	
+		 *
+		 * @return void
+		 */
+		public function exlusions()
+		{
+		
+			//don't process default GDPR stuff in some cases:
+			add_filter( 'do_gdpr_check', function( $boolean, $formId ){
+
+				//Chef Users:
+				if( class_exists( '\ChefUsers\Profiles\FormData' ) ){
+					$ids = \ChefUsers\Profiles\FormData::getIds();
+					if( in_array( $formId, $ids ) ){
+						return false;
+					}
+				}
+
+
+				//Chef Cart:
+				if( class_exists( '\ChefCart\Helpers\Checkout' ) ){
+					if( $formId == \ChefCart\Helpers\Checkout::getFormId() ){
+						return false;
+					}
+				}
+
+
+				return $boolean;
+
+			}, 100, 2 );
+		
 		}
 
 	}

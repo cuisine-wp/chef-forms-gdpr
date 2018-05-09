@@ -15,17 +15,22 @@
          */
         public function setPrivacy()
         {
-            $saveEntry = false;
-            if( 
-                isset( $_POST['gdpr_permission'] ) && 
-                $_POST['gdpr_permission'] == 'true'
-            ){
-                $saveEntry = true;
-            }
+            if( apply_filters( 'do_gdpr_check', true, $_POST['_fid'] ) ){
+                
+                $saveEntry = false;
+                
+                if( 
+                    isset( $_POST['gdpr_permission'] ) && 
+                    $_POST['gdpr_permission'] == 'true'
+                ){
+                    $saveEntry = true;
+                }
 
-            
-            if( !$saveEntry && isset( $_POST['entry_id'] ) ){
-                add_post_meta( $_POST['entry_id'], 'gdpr_remove', 'true' );
+
+                
+                if( !$saveEntry && isset( $_POST['entry_id'] ) ){
+                    add_post_meta( $_POST['entry_id'], 'gdpr_remove', 'true' );
+                }
             }
         }
 

@@ -60,7 +60,8 @@
 			if( 
 				!is_admin() && 
 				$meta_key == 'fields' && 
-				get_post_type( $post_id ) == 'form'
+				get_post_type( $post_id ) == 'form' &&
+				apply_filters( 'do_gdpr_check', true, $post_id )
 			){
 		
 				//temporary remove the filter:

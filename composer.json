@@ -14,7 +14,7 @@
       "name": "Remy Bakker",
       "email": "remy@sprangers.com",
       "homepage": "https://www.sprangers.com"
-    },
+    }
   ],
   "type": "wordpress-muplugin",
   "require": {

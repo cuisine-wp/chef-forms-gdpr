@@ -23,7 +23,7 @@ class GdprCheckboxField extends DefaultField{
      */
     public function render(  )
     {
-        $this->id = 'gdpr_permission';
+        $this->id = 'gdpr_permission_'.$this->id;
         $this->sanitizeProperties();
 
         

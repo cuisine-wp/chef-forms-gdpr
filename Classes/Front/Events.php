@@ -25,12 +25,12 @@
 
 
 			//register event
-			wp_schedule_event( time(), 'hourly', 'chef_forms_gdpr_bot' );
+			/*wp_schedule_event( time(), 'hourly', 'chef_forms_gdpr_bot' );
 			
 			//hook into the event:
 			add_action( 'chef_forms_gdpr_bot', function(){
 				Processor::autoRemove();
-			});
+			});*/
 
 		}
 
